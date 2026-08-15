@@ -2086,6 +2086,7 @@ button {
             translateY(-10px);
 
         transition: .3s;
+        
     }
 
     .menu.open {
@@ -2323,4 +2324,108 @@ button {
         bottom: 15px;
     }
 
+}
+.hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.hero-title h1 {
+    display: block;
+    width: auto;
+    max-width: 500px;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left !important;
+    text-align-last: left !important;
+
+    font-size: 55px !important;
+    line-height: 1 !important;
+
+    letter-spacing: -2px !important;
+    word-spacing: 0 !important;
+
+    white-space: normal !important;
+}
+
+.hero-title h1 strong {
+    color: var(--blue-dark);
+}
+
+.hero-logo {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0;
+
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* TABLET */
+
+@media (max-width: 820px) {
+
+    .hero-title {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .hero-logo-box {
+        flex: 0 0 130px;
+    }
+
+    .hero-logo {
+        width: 130px;
+    }
+
+    .hero-main-title {
+        font-size: 45px !important;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 560px) {
+
+    .hero-title {
+        gap: 15px;
+    }
+
+    .hero-logo-box {
+        flex: 0 0 85px;
+    }
+
+    .hero-logo {
+        width: 85px;
+    }
+
+    .hero-main-title {
+        font-size: 31px !important;
+        letter-spacing: -1px !important;
+    }
 }
