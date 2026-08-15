@@ -2325,6 +2325,10 @@ button {
     }
 
 }
+/* =====================================================
+   HERO TITLE + LOGO
+   ===================================================== */
+
 .hero-title {
     display: flex;
     align-items: center;
@@ -2336,20 +2340,13 @@ button {
     display: block;
     width: auto;
     max-width: 500px;
-
     margin: 0;
     padding: 0;
-
-    text-align: left !important;
-    text-align-last: left !important;
-
-    font-size: 55px !important;
-    line-height: 1 !important;
-
-    letter-spacing: -2px !important;
-    word-spacing: 0 !important;
-
-    white-space: normal !important;
+    text-align: left;
+    font-size: 55px;
+    line-height: 1;
+    letter-spacing: -2px;
+    word-spacing: 0;
 }
 
 .hero-title h1 strong {
@@ -2360,99 +2357,65 @@ button {
     width: 150px;
     height: auto;
     flex-shrink: 0;
-
     animation: logoFloat 4s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
-
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 
 /* TABLET */
-
 @media (max-width: 820px) {
-
     .hero-title {
         justify-content: center;
-        gap: 25px;
+        gap: 24px;
     }
 
     .hero-logo-box {
-        flex: 0 0 130px;
+        flex: 0 0 auto;
     }
 
     .hero-logo {
-        width: 130px;
-    }
-
-    .hero-main-title {
-        font-size: 45px !important;
+        width: 125px;
     }
 }
 
-
-/* =====================================================
-   MOBILE - HERO
-   ===================================================== */
-
-@media screen and (max-width: 768px) {
-
-    /* Mantém o hero em coluna */
-    .hero {
-        display: block !important;
-        padding: 110px 24px 60px !important;
+/* CELULAR - LOGO ACIMA DO TÍTULO */
+@media (max-width: 560px) {
+    .hero-title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
     }
 
-    /* Container principal do conteúdo */
-    .hero-content {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        width: 100% !important;
+    .hero-logo-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
-    /* LOGO - fica acima do título */
-    .hero-content img {
-        display: block !important;
-        width: 110px !important;
-        max-width: 110px !important;
-        height: auto !important;
-        margin: 0 auto 35px auto !important;
+    .hero-logo {
+        width: 105px;
+        margin: 0 auto;
     }
 
-    /* TÍTULO */
-    .hero-content h1 {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: 48px !important;
-        line-height: 0.98 !important;
-        letter-spacing: -2px !important;
-        margin: 0 0 25px 0 !important;
+    .hero-title h1 {
+        width: 100%;
+        max-width: 100%;
+        text-align: center !important;
+        font-size: 38px !important;
+        line-height: 1.02 !important;
+        letter-spacing: -1.5px !important;
+        margin: 0;
     }
 
-    /* Texto abaixo do título */
-    .hero-content p {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: 16px !important;
-        line-height: 1.5 !important;
+    .hero-copy > p {
+        font-size: 14px;
+        line-height: 1.7;
     }
-
 }
+
