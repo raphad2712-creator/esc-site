@@ -2408,24 +2408,58 @@ button {
 }
 
 
-/* CELULAR */
+/* =========================
+   AJUSTES PARA CELULAR
+   ========================= */
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
 
-    .hero-title {
-        gap: 15px;
-    }
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding: 120px 20px 60px;
+  }
 
-    .hero-logo-box {
-        flex: 0 0 85px;
-    }
+  /* Conteúdo do hero */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .hero-logo {
-        width: 85px;
-    }
+  /* Logo acima do título */
+  .hero-logo,
+  .hero .logo {
+    order: -1;
+    margin-bottom: 28px;
+    max-width: 110px;
+    height: auto;
+  }
 
-    .hero-main-title {
-        font-size: 31px !important;
-        letter-spacing: -1px !important;
-    }
+  /* Título principal */
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Texto */
+  .hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  /* Botões */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+  }
 }
