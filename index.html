@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ESC Manutenção e Automação Industrial — soluções em automação, manutenção e engenharia para a indústria.">
+    <title>ESC | Manutenção e Automação Industrial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container nav">
+            <a href="#inicio" class="logo-link" aria-label="ESC - início">
+                <img src="assets/logo-esc.webp" alt="ESC Manutenção e Automação Industrial" class="logo">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="menu" id="menu">
+                <a href="#inicio" class="active">Início</a>
+                <a href="#empresa">Empresa</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#processo">Processo</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a href="#contato" class="header-button">SOLICITAR ORÇAMENTO <span>↗</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-grid"></div>
+            <div class="glow glow-blue"></div>
+            <div class="glow glow-gold"></div>
+
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span></span>AUTOMAÇÃO & TECNOLOGIA INDUSTRIAL</div>
+                    <h1>Tecnologia<br>que <strong>move a<br>indústria.</strong></h1>
+                    <p>Soluções inteligentes em automação, manutenção e engenharia para tornar seus processos mais eficientes, seguros e confiáveis.</p>
+
+                    <div class="hero-actions">
+                        <a href="#servicos" class="button button-primary">CONHEÇA NOSSAS SOLUÇÕES <span>→</span></a>
+                        <a href="#projetos" class="button button-outline">VER PROJETOS</a>
+                    </div>
+                </div>
+
+                <div class="hero-projects" aria-label="Projetos em destaque">
+                    <div class="project-topbar">
+                        <div>
+                            <span class="status-dot"></span>
+                            <span>PROJETOS ESC</span>
+                        </div>
+                        <div class="project-counter"><span id="projectCurrent">01</span> / <span id="projectTotal">04</span></div>
+                    </div>
+
+                    <div class="project-stage" id="projectStage">
+                        <article class="project-slide active">
+                            <div class="project-image-wrap">
+                                <img src="assets/projeto-1.jpg" alt="Painel de controle e automação industrial">
+                                <div class="image-label">ESC / AUTOMAÇÃO</div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">AUTOMAÇÃO INDUSTRIAL</span>
+                                <h2>Painel de controle</h2>
+                                <p>Comando e controle aplicados a processos industriais, com foco em segurança e confiabilidade.</p>
+                                <a href="#contato" class="project-button">SAIBA MAIS <span>→</span></a>
+                            </div>
+                        </article>
+
+                        <article class="project-slide">
+                            <div class="project-image-wrap">
+                                <img src="assets/projeto-2.jpg" alt="Máquina industrial protegida por grade de segurança">
+                                <div class="image-label">ESC / SEGURANÇA</div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">PROTEÇÃO DE MÁQUINAS</span>
+                                <h2>Segurança industrial</h2>
+                                <p>Soluções de proteção e adequação para máquinas, priorizando segurança operacional e acesso controlado.</p>
+                                <a href="#contato" class="project-button">SAIBA MAIS <span>→</span></a>
+                            </div>
+                        </article>
+
+                        <article class="project-slide">
+                            <div class="project-image-wrap">
+                                <img src="assets/projeto-3.jpg" alt="Máquina industrial com painel de automação ESC">
+                                <div class="image-label">ESC / CONTROLE</div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">CONTROLE E AUTOMAÇÃO</span>
+                                <h2>Automação de máquinas</h2>
+                                <p>Integração de comandos, sensores e interfaces para modernizar equipamentos e melhorar o processo.</p>
+                                <a href="#contato" class="project-button">SAIBA MAIS <span>→</span></a>
+                            </div>
+                        </article>
+
+                        <article class="project-slide">
+                            <div class="project-image-wrap">
+                                <img src="assets/projeto-4.jpg" alt="Máquina industrial com sistema de proteção e automação">
+                                <div class="image-label">ESC / PROJETO</div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">PROJETO INDUSTRIAL</span>
+                                <h2>Integração industrial</h2>
+                                <p>Projetos desenvolvidos para integrar automação, proteção e operação em ambientes industriais.</p>
+                                <a href="#contato" class="project-button">SAIBA MAIS <span>→</span></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="project-controls">
+                        <div class="project-dots">
+                            <button class="project-dot active" aria-label="Projeto 1"></button>
+                            <button class="project-dot" aria-label="Projeto 2"></button>
+                            <button class="project-dot" aria-label="Projeto 3"></button>
+                            <button class="project-dot" aria-label="Projeto 4"></button>
+                        </div>
+                        <div class="arrows">
+                            <button id="projectPrev" aria-label="Projeto anterior">←</button>
+                            <button id="projectNext" aria-label="Próximo projeto">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator"><span></span> SCROLL</div>
+        </section>
+
+        <section class="numbers" aria-label="Indicadores ESC">
+            <div class="container numbers-grid">
+                <div><strong>+10</strong><span>anos de experiência</span></div>
+                <div><strong>+50</strong><span>projetos realizados</span></div>
+                <div><strong>100%</strong><span>foco no cliente</span></div>
+                <div><strong>24/7</strong><span>confiabilidade industrial</span></div>
+            </div>
+        </section>
+
+        <section class="section about" id="empresa">
+            <div class="container two-columns">
+                <div class="section-heading reveal">
+                    <span class="section-number">01 / EMPRESA</span>
+                    <h2>Experiência que<br><strong>transforma</strong> processos.</h2>
+                </div>
+                <div class="about-text reveal">
+                    <p class="lead">A ESC atua com manutenção e automação industrial, desenvolvendo soluções para aumentar a produtividade, segurança e confiabilidade dos processos.</p>
+                    <p>Unimos conhecimento técnico, planejamento e tecnologia para entregar projetos pensados para a realidade de cada operação.</p>
+                    <a href="#contato" class="text-link">FALE COM A ESC <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section services" id="servicos">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <span class="section-number">02 / SERVIÇOS</span>
+                    <h2>Soluções para a<br><strong>indústria.</strong></h2>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card reveal"><span class="service-index">01</span><div class="service-icon">⚙</div><h3>Automação Industrial</h3><p>Projetos de automação, comandos e integração para tornar operações mais eficientes.</p><a href="#contato">SAIBA MAIS →</a></article>
+                    <article class="service-card reveal"><span class="service-index">02</span><div class="service-icon">⌁</div><h3>Manutenção</h3><p>Manutenção e melhorias para aumentar disponibilidade e confiabilidade dos equipamentos.</p><a href="#contato">SAIBA MAIS →</a></article>
+                    <article class="service-card reveal"><span class="service-index">03</span><div class="service-icon">▣</div><h3>Painéis Elétricos</h3><p>Montagem e adequação de painéis para controle e distribuição em aplicações industriais.</p><a href="#contato">SAIBA MAIS →</a></article>
+                    <article class="service-card reveal"><span class="service-index">04</span><div class="service-icon">◈</div><h3>Segurança de Máquinas</h3><p>Soluções para proteção, controle de acesso e segurança operacional de máquinas.</p><a href="#contato">SAIBA MAIS →</a></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects" id="projetos">
+            <div class="container">
+                <div class="projects-title-row reveal">
+                    <div class="section-heading"><span class="section-number">03 / PROJETOS</span><h2>Feito para a<br><strong>vida real.</strong></h2></div>
+                    <p>Conheça alguns registros de soluções e equipamentos desenvolvidos em ambientes industriais.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-item large reveal"><img src="assets/projeto-4.jpg" alt="Projeto de automação industrial ESC"><figcaption>Automação industrial</figcaption></figure>
+                    <figure class="gallery-item reveal"><img src="assets/projeto-1.jpg" alt="Painel de controle ESC"><figcaption>Painel de controle</figcaption></figure>
+                    <figure class="gallery-item reveal"><img src="assets/projeto-3.jpg" alt="Máquina automatizada ESC"><figcaption>Controle de máquina</figcaption></figure>
+                    <figure class="gallery-item wide reveal"><img src="assets/projeto-2.jpg" alt="Proteção de máquina industrial"><figcaption>Segurança de máquinas</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section process" id="processo">
+            <div class="container">
+                <div class="section-heading centered reveal"><span class="section-number">04 / PROCESSO</span><h2>Do desafio à<br><strong>solução.</strong></h2></div>
+                <div class="process-grid">
+                    <div class="process-item reveal"><span>01</span><h3>Diagnóstico</h3><p>Entendemos o processo, o problema e os objetivos da operação.</p></div>
+                    <div class="process-item reveal"><span>02</span><h3>Projeto</h3><p>Definimos a solução técnica mais adequada para a aplicação.</p></div>
+                    <div class="process-item reveal"><span>03</span><h3>Implementação</h3><p>Executamos a solução com organização, segurança e acompanhamento.</p></div>
+                    <div class="process-item reveal"><span>04</span><h3>Entrega</h3><p>Validamos o resultado e deixamos a operação pronta para evoluir.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contato">
+            <div class="container cta-content reveal">
+                <div><span class="section-number">05 / CONTATO</span><h2>Vamos melhorar<br><strong>sua operação?</strong></h2><p>Conte para a ESC o que sua indústria precisa.</p></div>
+                <div class="cta-actions"><a class="button button-primary" href="https://wa.me/5511999999999" target="_blank" rel="noopener">FALAR PELO WHATSAPP <span>↗</span></a><a class="button button-light" href="mailto:contato@esc.ind.br">ENVIAR E-MAIL</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div><img src="assets/logo-esc.webp" alt="ESC" class="footer-logo"><p>Manutenção e Automação Industrial.</p></div>
+            <div><span class="footer-title">NAVEGAÇÃO</span><a href="#empresa">Empresa</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></div>
+            <div><span class="footer-title">CONTATO</span><a href="mailto:contato@esc.ind.br">contato@esc.ind.br</a><a href="https://www.esc.ind.br/" target="_blank" rel="noopener">www.esc.ind.br</a></div>
+        </div>
+        <div class="container copyright"><span>© <span id="year"></span> ESC. Todos os direitos reservados.</span><span>Manutenção • Automação • Engenharia</span></div>
+    </footer>
+
+    <a class="whatsapp" href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">⌕</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
