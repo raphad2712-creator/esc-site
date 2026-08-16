@@ -714,3 +714,82 @@ document
         );
 
     });
+
+// ==============================
+// FORMULÁRIO DE ORÇAMENTO -> WHATSAPP
+// ==============================
+const quoteForm = document.getElementById('quoteForm');
+const formStatus = document.getElementById('formStatus');
+
+if (quoteForm) {
+    const requiredFields = [...quoteForm.querySelectorAll('[required]')];
+
+    const clearFieldError = field => {
+        field.closest('.form-field')?.classList.remove('is-invalid');
+    };
+
+    quoteForm.querySelectorAll('input, select, textarea').forEach(field => {
+        field.addEventListener('input', () => clearFieldError(field));
+        field.addEventListener('change', () => clearFieldError(field));
+    });
+
+    quoteForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        let firstInvalid = null;
+        requiredFields.forEach(field => {
+            clearFieldError(field);
+            if (!field.value.trim()) {
+                field.closest('.form-field')?.classList.add('is-invalid');
+                if (!firstInvalid) firstInvalid = field;
+            }
+        });
+
+        const emailField = quoteForm.elements.email;
+        if (emailField?.value && !emailField.validity.valid) {
+            emailField.closest('.form-field')?.classList.add('is-invalid');
+            firstInvalid = firstInvalid || emailField;
+        }
+
+        if (firstInvalid) {
+            if (formStatus) formStatus.textContent = 'Confira os campos obrigatórios destacados antes de enviar.';
+            firstInvalid.focus();
+            return;
+        }
+
+        const data = new FormData(quoteForm);
+        const nome = (data.get('nome') || '').trim();
+        const empresa = (data.get('empresa') || '').trim();
+        const telefone = (data.get('telefone') || '').trim();
+        const email = (data.get('email') || '').trim();
+        const servico = (data.get('servico') || '').trim();
+        const cidade = (data.get('cidade') || '').trim();
+        const mensagem = (data.get('mensagem') || '').trim();
+
+        const lines = [
+            'Olá! Vim pelo site da ESC e gostaria de solicitar um orçamento.',
+            '',
+            `*Nome:* ${nome}`,
+            empresa ? `*Empresa:* ${empresa}` : null,
+            `*Telefone:* ${telefone}`,
+            email ? `*E-mail:* ${email}` : null,
+            `*Serviço:* ${servico}`,
+            cidade ? `*Cidade/UF:* ${cidade}` : null,
+            '',
+            '*Necessidade:*',
+            mensagem
+        ].filter(Boolean);
+
+        // Mantém o mesmo número utilizado nos demais botões de WhatsApp do site.
+        const whatsappLink = document.querySelector('a.whatsapp')?.getAttribute('href') || 'https://wa.me/5511999999999';
+        const baseUrl = whatsappLink.split('?')[0];
+        const url = `${baseUrl}?text=${encodeURIComponent(lines.join('\n'))}`;
+
+        if (formStatus) formStatus.textContent = 'Abrindo o WhatsApp com sua solicitação...';
+
+        const whatsappWindow = window.open(url, '_blank');
+        if (!whatsappWindow) {
+            window.location.href = url;
+        }
+    });
+}
