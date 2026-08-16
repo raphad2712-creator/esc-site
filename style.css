@@ -2970,3 +2970,352 @@ button {
         height: 28px;
     }
 }
+
+
+/* =========================================
+   CONTEÚDO TÉCNICO — NR-12
+========================================= */
+.nr12-content {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(217,165,42,.09), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+    border-top: 1px solid rgba(18,59,91,.08);
+}
+
+.nr12-content::before {
+    content: "NR-12";
+    position: absolute;
+    right: -12px;
+    top: 26px;
+    font-family: "Orbitron", "Inter", sans-serif;
+    font-size: clamp(76px, 11vw, 170px);
+    font-weight: 800;
+    letter-spacing: -.05em;
+    color: rgba(18,59,91,.025);
+    pointer-events: none;
+    user-select: none;
+}
+
+.nr12-content-header {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+    gap: clamp(36px, 7vw, 100px);
+    align-items: end;
+    margin-bottom: 42px;
+}
+
+.nr12-content-header > p {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.85;
+    max-width: 540px;
+}
+
+.nr12-benefits {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.nr12-benefit-card {
+    position: relative;
+    min-height: 245px;
+    padding: 30px;
+    overflow: hidden;
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(18,59,91,.11);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(18,59,91,.07);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.nr12-benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(217,165,42,.42);
+    box-shadow: 0 18px 42px rgba(18,59,91,.11);
+}
+
+.nr12-benefit-index {
+    display: block;
+    margin-bottom: 30px;
+    color: var(--gold);
+    font-family: "Orbitron", "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+}
+
+.nr12-benefit-icon {
+    position: absolute;
+    top: 24px;
+    right: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(217,165,42,.12);
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.nr12-benefit-card h3 {
+    margin: 0 0 14px;
+    color: var(--blue-dark);
+    font-family: "Orbitron", "Inter", sans-serif;
+    font-size: clamp(18px, 2vw, 23px);
+}
+
+.nr12-benefit-card p {
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.nr12-article-box {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 40px;
+    align-items: center;
+    padding: clamp(28px, 4vw, 48px);
+    border-radius: 22px;
+    background: var(--blue-dark);
+    box-shadow: 0 22px 55px rgba(18,59,91,.18);
+}
+
+.nr12-article-copy {
+    max-width: 760px;
+}
+
+.nr12-article-label {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: var(--gold);
+    font-family: "Orbitron", "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+}
+
+.nr12-article-copy h3 {
+    margin: 0 0 14px;
+    color: #fff;
+    font-family: "Orbitron", "Inter", sans-serif;
+    font-size: clamp(21px, 2.5vw, 32px);
+    line-height: 1.3;
+}
+
+.nr12-article-copy p {
+    margin: 0;
+    max-width: 720px;
+    color: rgba(255,255,255,.72);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.nr12-article-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    min-width: 285px;
+}
+
+.nr12-article-actions .button {
+    width: 100%;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.nr12-contact-button {
+    background: #fff;
+}
+
+@media (max-width: 980px) {
+    .nr12-content-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .nr12-content-header > p {
+        max-width: 720px;
+    }
+
+    .nr12-article-box {
+        grid-template-columns: 1fr;
+    }
+
+    .nr12-article-actions {
+        min-width: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nr12-article-actions .button {
+        width: auto;
+        flex: 1 1 280px;
+    }
+}
+
+@media (max-width: 760px) {
+    .nr12-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .nr12-benefit-card {
+        min-height: 0;
+        padding: 26px;
+    }
+
+    .nr12-benefit-index {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 520px) {
+    .nr12-content::before {
+        top: 60px;
+        font-size: 88px;
+    }
+
+    .nr12-content-header {
+        margin-bottom: 28px;
+    }
+
+    .nr12-content-header > p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .nr12-benefits {
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .nr12-benefit-card {
+        border-radius: 16px;
+    }
+
+    .nr12-article-box {
+        gap: 26px;
+        padding: 26px 20px;
+        border-radius: 18px;
+    }
+
+    .nr12-article-copy h3 {
+        font-size: 20px;
+    }
+
+    .nr12-article-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .nr12-article-actions .button {
+        width: 100%;
+        min-width: 0;
+        white-space: normal;
+        text-align: left;
+    }
+}
+
+/* Centralização consistente do ícone do WhatsApp, inclusive no Safari/iOS */
+.whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp svg {
+    position: static;
+    width: 28px;
+    height: 28px;
+    display: block;
+    margin: 0;
+    flex: 0 0 28px;
+    transform: none;
+}
+
+/* =========================================
+   CORREÇÃO NR-12 — BOTÃO CLARO / SAFARI
+========================================= */
+.nr12-article-box {
+    width: 100%;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 1fr) minmax(285px, 320px);
+}
+
+.nr12-article-copy,
+.nr12-article-actions {
+    min-width: 0;
+}
+
+.nr12-contact-button,
+.nr12-article-actions .nr12-contact-button {
+    background: #ffffff;
+    color: var(--blue-dark);
+    border: 1px solid rgba(255,255,255,.78);
+}
+
+.nr12-contact-button span,
+.nr12-article-actions .nr12-contact-button span {
+    color: var(--blue-dark);
+    background: rgba(18,59,91,.06);
+    border-color: rgba(18,59,91,.16);
+}
+
+.nr12-contact-button:hover,
+.nr12-article-actions .nr12-contact-button:hover {
+    background: var(--gold);
+    color: #ffffff;
+    border-color: var(--gold);
+}
+
+.nr12-contact-button:hover span,
+.nr12-article-actions .nr12-contact-button:hover span {
+    color: var(--gold);
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+@media (max-width: 1100px) {
+    .nr12-article-box {
+        grid-template-columns: 1fr;
+    }
+
+    .nr12-article-actions {
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nr12-article-actions .button {
+        flex: 1 1 280px;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .nr12-article-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .nr12-article-actions .button {
+        width: 100%;
+        white-space: normal;
+    }
+}
