@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#071f33">
+  <meta name="description" content="Links oficiais da ESC Automação Industrial: WhatsApp, site e Instagram.">
+  <title>ESC | Links Oficiais</title>
+  <link rel="icon" href="assets/logo-esc.webp" type="image/webp">
+  <style>
+    :root {
+      --navy: #071f33;
+      --navy-2: #0b304c;
+      --blue: #0f5f93;
+      --gold: #dca820;
+      --gold-2: #f1c54b;
+      --white: #f7fbff;
+      --muted: #9eb4c6;
+      --line: rgba(255,255,255,.11);
+      --card: rgba(9, 42, 67, .78);
+      --shadow: 0 24px 70px rgba(0,0,0,.34);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(23, 111, 165, .25), transparent 31%),
+        radial-gradient(circle at 82% 80%, rgba(220, 168, 32, .12), transparent 27%),
+        linear-gradient(135deg, #061827 0%, #08273d 48%, #061a2b 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: max(24px, env(safe-area-inset-top)) 18px max(28px, env(safe-area-inset-bottom));
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .19;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 94%);
+      animation: gridMove 18s linear infinite;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(220,168,32,.14);
+      border-radius: 50%;
+      right: -230px;
+      top: -200px;
+      box-shadow: 0 0 0 70px rgba(220,168,32,.025), 0 0 0 140px rgba(220,168,32,.018);
+      pointer-events: none;
+      animation: floatOrb 10s ease-in-out infinite alternate;
+    }
+
+    .shell {
+      width: min(100%, 470px);
+      position: relative;
+      z-index: 1;
+      animation: enter .7s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .panel {
+      position: relative;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      padding: 30px 22px 22px;
+      background: linear-gradient(180deg, rgba(10,43,68,.92), rgba(5,28,46,.88));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-2), transparent);
+      opacity: .95;
+    }
+
+    .panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(120deg, transparent 0 44%, rgba(255,255,255,.035) 50%, transparent 56% 100%);
+      transform: translateX(-130%);
+      animation: scan 6.5s ease-in-out infinite 1.2s;
+    }
+
+    .brand {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-wrap {
+      width: 126px;
+      height: 126px;
+      margin: 0 auto 16px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .logo-wrap::before,
+    .logo-wrap::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      inset: -8px;
+      border: 1px solid rgba(220,168,32,.30);
+      animation: ring 3.4s ease-in-out infinite;
+    }
+
+    .logo-wrap::after {
+      inset: -16px;
+      border-color: rgba(220,168,32,.14);
+      animation-delay: .8s;
+    }
+
+    .logo {
+      width: 116px;
+      height: 116px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,.28));
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    h1 {
+      margin: 5px 0 6px;
+      font-size: clamp(24px, 7vw, 31px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+
+    .tagline {
+      margin: 0 auto;
+      max-width: 340px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .eyebrow {
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 800;
+      font-size: 10px;
+      margin-top: 8px;
+    }
+
+    .links {
+      margin-top: 28px;
+      display: grid;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .link-card {
+      position: relative;
+      min-height: 72px;
+      display: grid;
+      grid-template-columns: 48px 1fr 38px;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 13px;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform .24s ease, border-color .24s ease, background .24s ease, box-shadow .24s ease;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
+    .link-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .25s ease;
+      background: radial-gradient(circle at 0 50%, rgba(220,168,32,.15), transparent 44%);
+    }
+
+    .link-card:hover,
+    .link-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(220,168,32,.6);
+      background: rgba(12, 54, 84, .94);
+      box-shadow: 0 15px 34px rgba(0,0,0,.22);
+      outline: none;
+    }
+
+    .link-card:hover::before,
+    .link-card:focus-visible::before { opacity: 1; }
+
+    .link-card.primary {
+      border-color: rgba(220,168,32,.48);
+      background: linear-gradient(135deg, rgba(220,168,32,.19), rgba(10,52,82,.94) 56%);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+      position: relative;
+      z-index: 1;
+    }
+
+    .primary .icon {
+      background: rgba(220,168,32,.15);
+      border-color: rgba(220,168,32,.24);
+    }
+
+    .icon svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .copy {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .copy strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: .045em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .copy span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-2);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.11);
+      transition: transform .25s ease, background .25s ease;
+      position: relative;
+      z-index: 1;
+      font-size: 18px;
+    }
+
+    .link-card:hover .arrow { transform: translateX(3px); background: rgba(220,168,32,.13); }
+
+    .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 22px 0 2px;
+      color: #b7c7d3;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #3de58a;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(61,229,138,.10);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 14px;
+      color: rgba(181,201,215,.62);
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(18px) scale(.985); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes gridMove { to { background-position: 42px 42px; } }
+    @keyframes scan {
+      0%, 66% { transform: translateX(-130%); }
+      85%, 100% { transform: translateX(130%); }
+    }
+    @keyframes logoFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes ring {
+      0%,100% { transform: scale(.96); opacity: .45; }
+      50% { transform: scale(1.04); opacity: .9; }
+    }
+    @keyframes floatOrb { to { transform: translate(-40px, 50px); } }
+    @keyframes pulse {
+      0%,100% { opacity: .7; transform: scale(.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    @media (max-width: 420px) {
+      body { padding-inline: 13px; }
+      .panel { border-radius: 25px; padding: 26px 16px 18px; }
+      .logo-wrap { width: 112px; height: 112px; }
+      .logo { width: 103px; height: 103px; }
+      .link-card { grid-template-columns: 44px 1fr 34px; min-height: 68px; gap: 10px; padding: 10px; }
+      .icon { width: 44px; height: 44px; border-radius: 13px; }
+      .copy strong { font-size: 13px; }
+      .copy span { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="panel" aria-label="Links oficiais da ESC">
+      <header class="brand">
+        <div class="logo-wrap">
+          <img class="logo" src="assets/logo-esc.webp" alt="Logo ESC Manutenção e Automação Industrial">
+        </div>
+        <div class="eyebrow">Manutenção • Automação • Engenharia</div>
+        <h1>ESC Automação Industrial</h1>
+        <p class="tagline">Soluções industriais com foco em segurança, confiabilidade e desempenho.</p>
+      </header>
+
+      <nav class="links" aria-label="Canais oficiais">
+        <a class="link-card primary" href="https://wa.me/5511947301808?text=Ol%C3%A1%21%20Vim%20pelo%20Instagram%20da%20ESC%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Falar com a ESC pelo WhatsApp">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 20.5 11.8Z"/>
+              <path d="M8.4 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.7.9c-.2.2-.1.5 0 .7.5 1 1.4 1.9 2.4 2.4.3.1.5.2.7 0l.9-1.1c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .4-.2 1.4-.9 2-.7.6-1.7.8-2.4.6-1.1-.3-2.7-.9-4.3-2.4-1.3-1.2-2.2-2.7-2.5-3.7-.4-1.2 0-2.5.5-3.1Z"/>
+            </svg>
+          </span>
+          <span class="copy">
+            <strong>Falar pelo WhatsApp</strong>
+            <span>Orçamentos e atendimento</span>
+          </span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="link-card" href="index.html" aria-label="Acessar o site oficial da ESC">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18M12 3c2.2 2.5 3.4 5.5 3.4 9S14.2 18.5 12 21c-2.2-2.5-3.4-5.5-3.4-9S9.8 5.5 12 3Z"/>
+            </svg>
+          </span>
+          <span class="copy">
+            <strong>Conhecer nosso site</strong>
+            <span>Serviços, projetos e NR-12</span>
+          </span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="link-card" href="https://www.instagram.com/esc_automacao/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o Instagram da ESC">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.4" cy="6.7" r=".7" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="copy">
+            <strong>Instagram da ESC</strong>
+            <span>@esc_automacao</span>
+          </span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <div class="status"><span class="dot"></span> Atendimento industrial</div>
+    </section>
+
+    <footer class="footer">ESC • Manutenção e Automação Industrial</footer>
+  </main>
+</body>
+</html>
