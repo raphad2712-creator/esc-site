@@ -1,18 +1,8 @@
-// ======================================================
-// ESC - SCRIPT PRINCIPAL
-// ======================================================
-
-
-// ==============================
-// HEADER
-// ==============================
-
 const header = document.getElementById('header');
 const menuToggle = document.getElementById('menuToggle');
 const menu = document.getElementById('menu');
 
 
-// Efeito do header ao rolar
 window.addEventListener('scroll', () => {
     if (window.scrollY > 30) {
         header.classList.add('scrolled');
@@ -21,10 +11,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-// ==============================
-// MENU MOBILE
-// ==============================
 
 if (menuToggle && menu) {
 
@@ -41,8 +27,6 @@ if (menuToggle && menu) {
 
 }
 
-
-// Fecha o menu ao clicar em algum link
 document.querySelectorAll('.menu a').forEach(link => {
 
     link.addEventListener('click', () => {
@@ -59,9 +43,6 @@ document.querySelectorAll('.menu a').forEach(link => {
 });
 
 
-// ==============================
-// CARROSSEL DE PROJETOS
-// ==============================
 
 const slides = [
     ...document.querySelectorAll('.project-slide')
@@ -80,7 +61,6 @@ const total = document.getElementById('projectTotal');
 const stage = document.getElementById('projectStage');
 
 
-// Verifica se o carrossel existe
 if (
     slides.length &&
     dots.length &&
@@ -99,14 +79,10 @@ if (
 
     const intervalTime = 5000;
 
-
-    // Quantidade de projetos
     total.textContent = String(slides.length).padStart(2, '0');
 
 
-    // ==============================
-    // BARRA DE PROGRESSO
-    // ==============================
+
 
     const progress = document.createElement('div');
 
@@ -115,9 +91,7 @@ if (
     stage.appendChild(progress);
 
 
-    // ==============================
-    // ATUALIZAR INDICADORES
-    // ==============================
+   
 
     function updateIndicators() {
 
@@ -137,9 +111,6 @@ if (
     }
 
 
-    // ==============================
-    // ANIMAÇÃO DA BARRA
-    // ==============================
 
     function startProgress() {
 
@@ -152,9 +123,7 @@ if (
     }
 
 
-    // ==============================
-    // MOSTRAR SLIDE
-    // ==============================
+    
 
     function showSlide(newIndex, direction = 1) {
 
@@ -185,7 +154,6 @@ if (
         newSlide.classList.add('active');
 
 
-        // Força o navegador a reconhecer a mudança
         requestAnimationFrame(() => {
 
             requestAnimationFrame(() => {
@@ -200,7 +168,7 @@ if (
         });
 
 
-        // Atualiza indicadores
+   
         index = newIndex;
 
         updateIndicators();
@@ -210,7 +178,6 @@ if (
         startProgress();
 
 
-        // Finaliza animação
         setTimeout(() => {
 
             oldSlide.classList.remove('leaving');
@@ -230,9 +197,7 @@ if (
     }
 
 
-    // ==============================
-    // PRÓXIMO
-    // ==============================
+    
 
     function nextSlide() {
 
@@ -244,9 +209,7 @@ if (
     }
 
 
-    // ==============================
-    // ANTERIOR
-    // ==============================
+ 
 
     function prevSlide() {
 
@@ -259,10 +222,7 @@ if (
     }
 
 
-    // ==============================
-    // TIMER
-    // ==============================
-
+    
     function restartTimer() {
 
         clearInterval(timer);
@@ -278,9 +238,6 @@ if (
     }
 
 
-    // ==============================
-    // BOTÃO PRÓXIMO
-    // ==============================
 
     next.addEventListener('click', () => {
 
@@ -291,9 +248,7 @@ if (
     });
 
 
-    // ==============================
-    // BOTÃO ANTERIOR
-    // ==============================
+    
 
     prev.addEventListener('click', () => {
 
