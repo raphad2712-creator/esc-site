@@ -3652,14 +3652,13 @@ button {
     font-weight: 600;
 }
 
-/* acabamento geral */
 .service-card,
 .portfolio-card,
 .nr12-benefit-card,
 .quote-card {
     -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
-
 @media (max-width: 1080px) {
     .contact-layout {
         grid-template-columns: 1fr;
@@ -3751,4 +3750,26 @@ button {
     .diferencial-card h3 { font-size: 11px; }
     .diferencial-card p { font-size: 11px; max-width: none; }
 }
-\n\n/* =========================================\n   WHATSAPP — CENTRALIZAÇÃO FINAL\n   Corrige alinhamento visual em Chrome/Safari/iOS\n========================================= */\n.whatsapp {\n    display: grid !important;\n    place-items: center !important;\n    line-height: 0 !important;\n    padding: 0 !important;\n}\n\n.whatsapp svg {\n    width: 29px !important;\n    height: 29px !important;\n    display: block !important;\n    margin: 0 !important;\n    padding: 0 !important;\n    position: static !important;\n    flex: none !important;\n    transform: translate(0, 0) !important;\n    transform-origin: center center !important;\n}\n\n@media (max-width: 480px) {\n    .whatsapp svg {\n        width: 28px !important;\n        height: 28px !important;\n    }\n}\n
+/* ========================================
+   CORREÇÃO DO ÍCONE DO WHATSAPP
+======================================== */
+
+.whatsapp svg {
+    width: 30px !important;
+    height: 30px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+
+    transform: translate(0, 0) !important;
+    transform-origin: center center !important;
+}
+
+@media (max-width: 480px) {
+    .whatsapp svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+}
