@@ -2926,3 +2926,47 @@ button {
         font-size: 24px;
     }
 }
+
+
+/* =========================================
+   AJUSTE MOBILE — HEADER E WHATSAPP
+   Mantém o botão de orçamento fora do header em telas pequenas
+   para não comprimir logo/menu, e usa o ícone oficial do WhatsApp.
+========================================= */
+.whatsapp svg {
+    width: 29px;
+    height: 29px;
+    display: block;
+}
+
+@media (max-width: 820px) {
+    .header-button {
+        display: none !important;
+    }
+
+    .nav {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .logo-link {
+        justify-self: start;
+    }
+
+    .menu-toggle {
+        justify-self: end;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp {
+        width: 54px;
+        height: 54px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .whatsapp svg {
+        width: 28px;
+        height: 28px;
+    }
+}
