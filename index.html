@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260816-1223">
+    <link rel="stylesheet" href="style.css?v=20260817-v4-carrossel">
 </head>
 <body>
     <header class="header" id="header">
@@ -32,7 +32,7 @@
                 <a href="#contato">Contato</a>
             </nav>
 
-            <a href="#contato" class="header-button">SOLICITAR ORÇAMENTO <span>↗</span></a>
+            <a href="#contato" class="header-button">SOLICITAR ORÇAMENTO <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
         </div>
     </header>
 
@@ -56,15 +56,15 @@
                     <p>Soluções inteligentes em automação, manutenção e engenharia para tornar seus processos mais eficientes, seguros e confiáveis.</p>
 
                     <div class="hero-actions">
-                        <a href="#servicos" class="button button-primary">CONHEÇA NOSSAS SOLUÇÕES <span>→</span></a>
-                        <a href="#projetos" class="button button-outline">VER PROJETOS <span>→</span></a>
+                        <a href="#servicos" class="button button-primary">CONHEÇA NOSSAS SOLUÇÕES <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                        <a href="#projetos" class="button button-outline">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                     </div>
                 </div>
 
                 <div class="hero-projects" aria-label="Projetos em destaque">
                     <div class="project-topbar">
-                        <div><span class="status-dot"></span><span>PROJETOS ESC</span></div>
-                        <div class="project-counter"><span id="projectCurrent">01</span> / <span id="projectTotal">04</span></div>
+                        <div class="project-brand"><span><strong>Projetos em destaque</strong><small>Soluções realizadas pela ESC</small></span></div>
+                        <div class="project-counter" aria-label="Projeto atual"><span id="projectCurrent">01</span><small>de</small><span id="projectTotal">04</span></div>
                     </div>
 
                     <div class="project-stage" id="projectStage">
@@ -77,7 +77,7 @@
                                 <span class="project-category">PAINÉIS ELÉTRICOS</span>
                                 <h2>Comando e automação</h2>
                                 <p>Desenvolvimento e montagem de painéis elétricos para comando, controle, acionamento e automação industrial.</p>
-                                <a href="#paineis-eletricos" class="project-button">VER PROJETOS <span>→</span></a>
+                                <a href="#paineis-eletricos" class="project-button">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                             </div>
                         </article>
 
@@ -90,7 +90,7 @@
                                 <span class="project-category">MÁQUINAS E EQUIPAMENTOS</span>
                                 <h2>Desenvolvimento industrial</h2>
                                 <p>Desenvolvimento, fabricação e melhorias de máquinas e equipamentos de acordo com a necessidade de cada processo.</p>
-                                <a href="#maquinas-equipamentos" class="project-button">VER PROJETOS <span>→</span></a>
+                                <a href="#maquinas-equipamentos" class="project-button">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                             </div>
                         </article>
 
@@ -103,7 +103,7 @@
                                 <span class="project-category">PROJETOS E MODELAGEM 3D</span>
                                 <h2>Do desenho à fabricação</h2>
                                 <p>Projetos, desenhos técnicos e modelagem 3D para desenvolvimento, fabricação e melhoria de soluções industriais.</p>
-                                <a href="#projetos-modelagem" class="project-button">VER PROJETOS <span>→</span></a>
+                                <a href="#projetos-modelagem" class="project-button">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                             </div>
                         </article>
 
@@ -116,21 +116,21 @@
                                 <span class="project-category">ADEQUAÇÃO NR-12</span>
                                 <h2>Segurança de máquinas</h2>
                                 <p>Adequação de máquinas com proteções, controles e recursos destinados a aumentar a segurança operacional.</p>
-                                <a href="#adequacao-nr12" class="project-button">VER PROJETOS <span>→</span></a>
+                                <a href="#adequacao-nr12" class="project-button">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                             </div>
                         </article>
                     </div>
 
                     <div class="project-controls">
                         <div class="project-dots">
-                            <button class="project-dot active" aria-label="Projeto 1"></button>
-                            <button class="project-dot" aria-label="Projeto 2"></button>
-                            <button class="project-dot" aria-label="Projeto 3"></button>
-                            <button class="project-dot" aria-label="Projeto 4"></button>
+                            <button class="project-dot active" aria-label="Ver painéis elétricos"><span>Painéis</span></button>
+                            <button class="project-dot" aria-label="Ver máquinas e equipamentos"><span>Máquinas</span></button>
+                            <button class="project-dot" aria-label="Ver projetos e modelagem"><span>Engenharia</span></button>
+                            <button class="project-dot" aria-label="Ver adequação NR-12"><span>NR-12</span></button>
                         </div>
                         <div class="arrows">
-                            <button id="projectPrev" aria-label="Projeto anterior">←</button>
-                            <button id="projectNext" aria-label="Próximo projeto">→</button>
+                            <button id="projectPrev" aria-label="Projeto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+                            <button id="projectNext" aria-label="Próximo projeto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -184,13 +184,12 @@
         <section class="section about" id="empresa">
             <div class="container two-columns">
                 <div class="section-heading reveal">
-                    <span class="section-number">01 / EMPRESA</span>
                     <h2>Experiência que<br><strong>transforma</strong> processos.</h2>
                 </div>
                 <div class="about-text reveal">
                     <p class="lead">A ESC atua com manutenção e automação industrial, desenvolvendo soluções para aumentar a produtividade, segurança e confiabilidade dos processos.</p>
                     <p>Unimos conhecimento técnico, planejamento e tecnologia para entregar projetos pensados para a realidade de cada operação.</p>
-                    <a href="#contato" class="text-link">FALE COM A ESC <span>→</span></a>
+                    <a href="#contato" class="text-link">FALE COM A ESC <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                 </div>
             </div>
         </section>
@@ -198,16 +197,15 @@
         <section class="section services" id="servicos">
             <div class="container">
                 <div class="section-heading centered reveal">
-                    <span class="section-number">02 / SERVIÇOS</span>
                     <h2>Soluções para a<br><strong>indústria.</strong></h2>
                 </div>
 
                 <div class="services-grid services-grid-five">
-                    <article class="service-card reveal"><span class="service-index">01</span><div class="service-icon">⚙</div><h3>Automação Industrial</h3><p>Projetos de automação, comandos e integração para tornar operações mais eficientes e confiáveis.</p><a href="#contato">SAIBA MAIS →</a></article>
-                    <article class="service-card reveal"><span class="service-index">02</span><div class="service-icon">⌁</div><h3>Manutenção Industrial</h3><p>Manutenção, melhorias e intervenções para aumentar a disponibilidade e a confiabilidade dos equipamentos.</p><a href="#contato">SAIBA MAIS →</a></article>
-                    <article class="service-card reveal"><span class="service-index">03</span><div class="service-icon">▣</div><h3>Painéis Elétricos</h3><p>Desenvolvimento, montagem e adequação de painéis de comando, controle e distribuição.</p><a href="#paineis-eletricos">VER PROJETOS →</a></article>
-                    <article class="service-card reveal"><span class="service-index">04</span><div class="service-icon">◈</div><h3>Adequação NR-12</h3><p>Soluções de proteção e adequação de máquinas com foco em segurança operacional.</p><a href="#adequacao-nr12">VER PROJETOS →</a></article>
-                    <article class="service-card reveal"><span class="service-index">05</span><div class="service-icon">◇</div><h3>Máquinas e Equipamentos</h3><p>Desenvolvimento, fabricação e melhorias de máquinas e equipamentos para aplicações industriais.</p><a href="#maquinas-equipamentos">VER PROJETOS →</a></article>
+                    <article class="service-card reveal"><span class="service-index">01</span><div class="service-icon">⚙</div><h3>Automação Industrial</h3><p>Projetos de automação, comandos e integração para tornar operações mais eficientes e confiáveis.</p><a href="#contato">SAIBA MAIS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></article>
+                    <article class="service-card reveal"><span class="service-index">02</span><div class="service-icon">⌁</div><h3>Manutenção Industrial</h3><p>Manutenção, melhorias e intervenções para aumentar a disponibilidade e a confiabilidade dos equipamentos.</p><a href="#contato">SAIBA MAIS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></article>
+                    <article class="service-card reveal"><span class="service-index">03</span><div class="service-icon">▣</div><h3>Painéis Elétricos</h3><p>Desenvolvimento, montagem e adequação de painéis de comando, controle e distribuição.</p><a href="#paineis-eletricos">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></article>
+                    <article class="service-card reveal"><span class="service-index">04</span><div class="service-icon">◈</div><h3>Adequação NR-12</h3><p>Soluções de proteção e adequação de máquinas com foco em segurança operacional.</p><a href="#adequacao-nr12">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></article>
+                    <article class="service-card reveal"><span class="service-index">05</span><div class="service-icon">◇</div><h3>Máquinas e Equipamentos</h3><p>Desenvolvimento, fabricação e melhorias de máquinas e equipamentos para aplicações industriais.</p><a href="#maquinas-equipamentos">VER PROJETOS <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></article>
                 </div>
             </div>
         </section>
@@ -215,13 +213,13 @@
         <section class="section projects" id="projetos">
             <div class="container">
                 <div class="projects-title-row reveal">
-                    <div class="section-heading"><span class="section-number">03 / PROJETOS</span><h2>Projetos separados<br><strong>por especialidade.</strong></h2></div>
+                    <div class="section-heading"><h2>Projetos separados<br><strong>por especialidade.</strong></h2></div>
                     <p>Os trabalhos foram organizados por área para mostrar com clareza os painéis elétricos, máquinas desenvolvidas, projetos de engenharia e adequações NR-12 realizadas pela ESC.</p>
                 </div>
 
                 <div class="project-category-block" id="paineis-eletricos">
                     <div class="project-category-heading reveal">
-                        <div><span class="category-kicker">01 / PAINÉIS ELÉTRICOS</span><h3>Painéis de comando, controle e automação</h3></div>
+                        <div><h3>Painéis de comando, controle e automação</h3></div>
                         <p>Montagem e desenvolvimento de painéis para acionamento, controle, proteção e automação de processos industriais.</p>
                     </div>
                     <div class="category-gallery category-gallery-panels">
@@ -236,7 +234,7 @@
 
                 <div class="project-category-block" id="maquinas-equipamentos">
                     <div class="project-category-heading reveal">
-                        <div><span class="category-kicker">02 / DESENVOLVIMENTO</span><h3>Máquinas e equipamentos</h3></div>
+                        <div><h3>Máquinas e equipamentos</h3></div>
                         <p>Equipamentos desenvolvidos, fabricados ou modificados para atender necessidades específicas de produção e processo.</p>
                     </div>
                     <div class="category-gallery category-gallery-machines">
@@ -249,7 +247,7 @@
 
                 <div class="project-category-block" id="projetos-modelagem">
                     <div class="project-category-heading reveal">
-                        <div><span class="category-kicker">03 / ENGENHARIA</span><h3>Projetos, desenhos e modelagem 3D</h3></div>
+                        <div><h3>Projetos, desenhos e modelagem 3D</h3></div>
                         <p>Desenvolvimento técnico em CAD, desenhos e modelagens para transformar necessidades industriais em soluções prontas para fabricação.</p>
                     </div>
                     <div class="category-gallery category-gallery-engineering">
@@ -260,7 +258,7 @@
 
                 <div class="project-category-block" id="adequacao-nr12">
                     <div class="project-category-heading reveal">
-                        <div><span class="category-kicker">04 / SEGURANÇA</span><h3>Adequação NR-12</h3></div>
+                        <div><h3>Adequação NR-12</h3></div>
                         <p>Registros de máquinas com proteções físicas, painéis de comando e recursos de segurança aplicados ao ambiente industrial.</p>
                     </div>
                     <div class="category-gallery category-gallery-nr12">
@@ -278,7 +276,6 @@
             <div class="container">
                 <div class="nr12-content-header reveal">
                     <div class="section-heading">
-                        <span class="section-number">CONTEÚDO TÉCNICO / NR-12</span>
                         <h2>Segurança que protege pessoas<br><strong>e o futuro da indústria.</strong></h2>
                     </div>
                     <p>A NR-12 trata da segurança no trabalho em máquinas e equipamentos. Mais do que atender a uma exigência, adequar uma máquina é investir na proteção das pessoas, na continuidade da operação e na solidez do negócio.</p>
@@ -314,8 +311,8 @@
                         <p>Leia o material completo preparado pela ESC sobre riscos, benefícios, documentação técnica e a importância da adequação preventiva de máquinas industriais.</p>
                     </div>
                     <div class="nr12-article-actions">
-                        <a class="button button-primary nr12-pdf-button" href="assets/documentos/artigo-importancia-nr12.pdf" target="_blank" rel="noopener">LER ARTIGO COMPLETO <span>↗</span></a>
-                        <a class="button button-light nr12-contact-button" href="https://wa.me/5511947301808" target="_blank" rel="noopener">SOLICITAR ADEQUAÇÃO NR-12 <span>→</span></a>
+                        <a class="button button-primary nr12-pdf-button" href="assets/documentos/artigo-importancia-nr12.pdf" target="_blank" rel="noopener">LER ARTIGO COMPLETO <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+                        <a class="button button-light nr12-contact-button" href="https://wa.me/5511947301808" target="_blank" rel="noopener">SOLICITAR ADEQUAÇÃO NR-12 <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                     </div>
                 </div>
             </div>
@@ -323,7 +320,7 @@
 
         <section class="section process" id="processo">
             <div class="container">
-                <div class="section-heading centered reveal"><span class="section-number">04 / PROCESSO</span><h2>Do desafio à<br><strong>solução.</strong></h2></div>
+                <div class="section-heading centered reveal"><h2>Do desafio à<br><strong>solução.</strong></h2></div>
                 <div class="process-grid">
                     <div class="process-item reveal"><span>01</span><h3>Diagnóstico</h3><p>Entendemos o processo, o problema e os objetivos da operação.</p></div>
                     <div class="process-item reveal"><span>02</span><h3>Projeto</h3><p>Definimos a solução técnica mais adequada para a aplicação.</p></div>
@@ -336,7 +333,6 @@
         <section class="contact-section" id="contato">
             <div class="container contact-layout">
                 <div class="contact-intro reveal">
-                    <span class="section-number">05 / CONTATO</span>
                     <h2>Conte o desafio.<br><strong>A ESC cuida da solução.</strong></h2>
                     <p>Preencha os dados ao lado com uma breve descrição do que sua operação precisa. Ao enviar, o WhatsApp será aberto com a mensagem já organizada para facilitar o atendimento.</p>
 
@@ -357,12 +353,18 @@
 
                     <div class="contact-quick-actions">
                         <a class="contact-quick-link" href="https://wa.me/5511947301808" target="_blank" rel="noopener">
-                            <span class="contact-quick-icon" aria-hidden="true">↗</span>
+                            <span class="contact-quick-icon whatsapp-mini" aria-hidden="true"><svg viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3A12.8 12.8 0 0 0 5.1 22.45L3.3 29l6.71-1.76A12.8 12.8 0 1 0 16.04 3Zm0 23.44c-1.93 0-3.83-.52-5.48-1.5l-.4-.24-3.98 1.04 1.06-3.88-.26-.4a10.62 10.62 0 1 1 9.06 4.98Zm5.82-7.96c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57a9.58 9.58 0 0 1-1.77-2.2c-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.63-.52-.55-.72-.56h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.14 3.09 1.3 3.3c.16.21 2.25 3.43 5.44 4.81.76.33 1.35.52 1.82.67.76.24 1.46.21 2 .13.61-.09 1.89-.77 2.16-1.52.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z"/></svg></span>
                             <span><small>CONTATO DIRETO</small><strong>Falar pelo WhatsApp</strong></span>
                         </a>
                         <a class="contact-quick-link" href="mailto:edmar.engenharia@esc.ind.br">
                             <span class="contact-quick-icon" aria-hidden="true">@</span>
                             <span><small>E-MAIL</small><strong>edmar.engenharia@esc.ind.br</strong></span>
+                        </a>
+                        <a class="contact-quick-link contact-instagram" href="https://www.instagram.com/esc_automacao/" target="_blank" rel="noopener">
+                            <span class="contact-quick-icon instagram-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.4" r="1" class="instagram-dot"/></svg>
+                            </span>
+                            <span><small>INSTAGRAM</small><strong>@esc_automacao</strong></span>
                         </a>
                     </div>
                 </div>
@@ -370,10 +372,9 @@
                 <div class="quote-card reveal">
                     <div class="quote-card-head">
                         <div>
-                            <span class="quote-kicker">SOLICITAR ORÇAMENTO</span>
                             <h3>Como podemos ajudar?</h3>
                         </div>
-                        <span class="quote-badge">ESC</span>
+                        <img class="quote-logo" src="assets/logo-esc.webp" alt="ESC Manutenção e Automação Industrial">
                     </div>
 
                     <form class="quote-form" id="quoteForm" novalidate>
@@ -425,7 +426,7 @@
 
                         <div class="form-footer">
                             <p><span aria-hidden="true">✓</span> Seus dados não são armazenados neste site. O envio abre o WhatsApp com a mensagem pronta.</p>
-                            <button type="submit" class="button button-primary quote-submit">ENVIAR SOLICITAÇÃO <span>↗</span></button>
+                            <button type="submit" class="button button-primary quote-submit">ENVIAR SOLICITAÇÃO <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></button>
                         </div>
                         <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
                     </form>
@@ -443,7 +444,7 @@
         <div class="container copyright"><span>© <span id="year"></span> ESC. Todos os direitos reservados.</span><span>CNPJ 19.520.041/0001-37 • São Paulo/SP</span></div>
     </footer>
 
-    <a class="whatsapp" href="https://wa.me/5511947301808" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><img src="assets/whatsapp.png" alt="WhatsApp"></a>
-    <script src="script.js?v=20260816-1223"></script>
+    <a class="whatsapp" href="https://wa.me/5511947301808" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3A12.8 12.8 0 0 0 5.1 22.45L3.3 29l6.71-1.76A12.8 12.8 0 1 0 16.04 3Zm0 23.44c-1.93 0-3.83-.52-5.48-1.5l-.4-.24-3.98 1.04 1.06-3.88-.26-.4a10.62 10.62 0 1 1 9.06 4.98Zm5.82-7.96c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57a9.58 9.58 0 0 1-1.77-2.2c-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.63-.52-.55-.72-.56h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.14 3.09 1.3 3.3c.16.21 2.25 3.43 5.44 4.81.76.33 1.35.52 1.82.67.76.24 1.46.21 2 .13.61-.09 1.89-.77 2.16-1.52.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z"/></svg></a>
+    <script src="script.js?v=20260817-v4-carrossel"></script>
 </body>
 </html>
