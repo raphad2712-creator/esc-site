@@ -1,4 +1,4 @@
-const header = document.getElementById('header');
+﻿const header = document.getElementById('header');
 const menuToggle = document.getElementById('menuToggle');
 const menu = document.getElementById('menu');
 
@@ -137,15 +137,9 @@ if (
         const oldSlide = slides[index];
 
         const newSlide = slides[newIndex];
-
-
-        // Remove estado anterior
         oldSlide.classList.remove('active');
 
         oldSlide.classList.add('leaving');
-
-
-        // Define posição inicial
         newSlide.style.transform =
             `translateX(${direction > 0 ? 100 : -100}px) scale(.96)`;
 
@@ -172,9 +166,6 @@ if (
         index = newIndex;
 
         updateIndicators();
-
-
-        // Reinicia barra
         startProgress();
 
 
@@ -258,11 +249,6 @@ if (
 
     });
 
-
-    // ==============================
-    // DOTS
-    // ==============================
-
     dots.forEach((dot, dotIndex) => {
 
         dot.addEventListener('click', () => {
@@ -285,11 +271,6 @@ if (
 
     });
 
-
-    // ==============================
-    // PAUSAR COM MOUSE
-    // ==============================
-
     stage.addEventListener(
         'mouseenter',
         () => {
@@ -310,11 +291,6 @@ if (
 
         }
     );
-
-
-    // ==============================
-    // TOUCH / CELULAR
-    // ==============================
 
     let touchStartX = 0;
 
@@ -372,11 +348,6 @@ if (
         }
     );
 
-
-    // ==============================
-    // TECLADO
-    // ==============================
-
     document.addEventListener(
         'keydown',
         event => {
@@ -401,21 +372,11 @@ if (
         }
     );
 
-
-    // ==============================
-    // INICIALIZAÇÃO
-    // ==============================
-
     updateIndicators();
 
     restartTimer();
 
 }
-
-
-// ==============================
-// ANIMAÇÃO DAS SEÇÕES
-// ==============================
 
 const revealElements =
     document.querySelectorAll('.reveal');
@@ -457,11 +418,6 @@ if (revealElements.length) {
     });
 
 }
-
-
-// ==============================
-// MENU ATIVO
-// ==============================
 
 const sections =
     [...document.querySelectorAll('main section[id]')];
@@ -525,11 +481,6 @@ if (sections.length && navLinks.length) {
 
 }
 
-
-// ==============================
-// ANO AUTOMÁTICO
-// ==============================
-
 const year =
     document.getElementById('year');
 
@@ -540,11 +491,6 @@ if (year) {
         new Date().getFullYear();
 
 }
-
-
-// ==============================
-// EFEITO DE PARALLAX NO HERO
-// ==============================
 
 const hero =
     document.querySelector('.hero');
@@ -606,11 +552,6 @@ if (hero && glowBlue && glowGold) {
 
 }
 
-
-// ==============================
-// EFEITO DE MOVIMENTO NAS IMAGENS
-// ==============================
-
 document
     .querySelectorAll('.project-image-wrap')
     .forEach(image => {
@@ -669,10 +610,6 @@ document
         );
 
     });
-
-// ==============================
-// FORMULÁRIO DE ORÇAMENTO -> WHATSAPP
-// ==============================
 const quoteForm = document.getElementById('quoteForm');
 const formStatus = document.getElementById('formStatus');
 
@@ -707,7 +644,7 @@ if (quoteForm) {
         }
 
         if (firstInvalid) {
-            if (formStatus) formStatus.textContent = 'Confira os campos obrigatórios destacados antes de enviar.';
+            if (formStatus) formStatus.textContent = 'Confira os campos obrigatÃ³rios destacados antes de enviar.';
             firstInvalid.focus();
             return;
         }
@@ -722,25 +659,23 @@ if (quoteForm) {
         const mensagem = (data.get('mensagem') || '').trim();
 
         const lines = [
-            'Olá! Vim pelo site da ESC e gostaria de solicitar um orçamento.',
+            'OlÃ¡! Vim pelo site da ESC e gostaria de solicitar um orÃ§amento.',
             '',
             `*Nome:* ${nome}`,
             empresa ? `*Empresa:* ${empresa}` : null,
             `*Telefone:* ${telefone}`,
             email ? `*E-mail:* ${email}` : null,
-            `*Serviço:* ${servico}`,
+            `*ServiÃ§o:* ${servico}`,
             cidade ? `*Cidade/UF:* ${cidade}` : null,
             '',
             '*Necessidade:*',
             mensagem
         ].filter(Boolean);
-
-        // Mantém o mesmo número utilizado nos demais botões de WhatsApp do site.
         const whatsappLink = document.querySelector('a.whatsapp')?.getAttribute('href') || 'https://wa.me/5511999999999';
         const baseUrl = whatsappLink.split('?')[0];
         const url = `${baseUrl}?text=${encodeURIComponent(lines.join('\n'))}`;
 
-        if (formStatus) formStatus.textContent = 'Abrindo o WhatsApp com sua solicitação...';
+        if (formStatus) formStatus.textContent = 'Abrindo o WhatsApp com sua solicitaÃ§Ã£o...';
 
         const whatsappWindow = window.open(url, '_blank');
         if (!whatsappWindow) {
@@ -748,3 +683,4 @@ if (quoteForm) {
         }
     });
 }
+
